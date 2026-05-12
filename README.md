@@ -1,5 +1,8 @@
 # house-price-prediction
 This project predicts house sale prices using the Kaggle House Prices dataset. The goal is to build machine learning models that accurately estimate the price of a house.
+Readme · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +21,9 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       --text: #e8eaf0;
       --muted: #6b7280;
     }
-
+ 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     body {
       background: var(--bg);
       color: var(--text);
@@ -29,7 +32,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       min-height: 100vh;
       overflow-x: hidden;
     }
-
+ 
     /* Background grid */
     body::before {
       content: '';
@@ -42,7 +45,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       pointer-events: none;
       z-index: 0;
     }
-
+ 
     .container {
       max-width: 860px;
       margin: 0 auto;
@@ -50,7 +53,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       position: relative;
       z-index: 1;
     }
-
+ 
     /* Header */
     .header {
       border-left: 3px solid var(--accent);
@@ -58,7 +61,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       margin-bottom: 60px;
       animation: fadeUp 0.8s ease both;
     }
-
+ 
     .header .tag {
       font-family: 'DM Mono', monospace;
       font-size: 11px;
@@ -67,7 +70,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       text-transform: uppercase;
       margin-bottom: 12px;
     }
-
+ 
     .header h1 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2.2rem, 5vw, 3.4rem);
@@ -75,19 +78,19 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       color: var(--text);
       margin-bottom: 16px;
     }
-
+ 
     .header h1 em {
       font-style: italic;
       color: var(--accent);
     }
-
+ 
     .header p {
       font-size: 1rem;
       color: var(--muted);
       line-height: 1.7;
       max-width: 520px;
     }
-
+ 
     /* Badges */
     .badges {
       display: flex;
@@ -95,7 +98,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       gap: 8px;
       margin-top: 20px;
     }
-
+ 
     .badge {
       font-family: 'DM Mono', monospace;
       font-size: 11px;
@@ -104,17 +107,17 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       border: 1px solid;
       letter-spacing: 1px;
     }
-
+ 
     .badge.gold  { border-color: var(--accent);  color: var(--accent);  background: rgba(232,200,122,0.06); }
     .badge.blue  { border-color: var(--accent2); color: var(--accent2); background: rgba(122,158,232,0.06); }
     .badge.green { border-color: var(--accent3); color: var(--accent3); background: rgba(122,232,184,0.06); }
-
+ 
     /* Section */
     .section {
       margin-bottom: 48px;
       animation: fadeUp 0.8s ease both;
     }
-
+ 
     .section-label {
       font-family: 'DM Mono', monospace;
       font-size: 10px;
@@ -126,21 +129,21 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       align-items: center;
       gap: 12px;
     }
-
+ 
     .section-label::after {
       content: '';
       flex: 1;
       height: 1px;
       background: var(--border);
     }
-
+ 
     /* Steps */
     .steps {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-
+ 
     .step {
       display: flex;
       align-items: flex-start;
@@ -151,12 +154,12 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       border-radius: 4px;
       transition: border-color 0.2s, transform 0.2s;
     }
-
+ 
     .step:hover {
       border-color: rgba(232,200,122,0.3);
       transform: translateX(4px);
     }
-
+ 
     .step-num {
       font-family: 'DM Mono', monospace;
       font-size: 11px;
@@ -164,25 +167,25 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       min-width: 24px;
       margin-top: 2px;
     }
-
+ 
     .step-text {
       font-size: 0.9rem;
       line-height: 1.6;
       color: var(--text);
     }
-
+ 
     .step-text span {
       color: var(--muted);
       font-size: 0.82rem;
     }
-
+ 
     /* Models grid */
     .models {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
-
+ 
     .model-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -190,27 +193,27 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       padding: 24px;
       transition: border-color 0.2s;
     }
-
+ 
     .model-card:hover { border-color: rgba(122,158,232,0.4); }
-
+ 
     .model-card .icon {
       font-size: 1.6rem;
       margin-bottom: 12px;
     }
-
+ 
     .model-card h3 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.15rem;
       margin-bottom: 8px;
       color: var(--accent2);
     }
-
+ 
     .model-card p {
       font-size: 0.82rem;
       color: var(--muted);
       line-height: 1.6;
     }
-
+ 
     .model-card .params {
       margin-top: 12px;
       font-family: 'DM Mono', monospace;
@@ -218,14 +221,14 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       color: var(--accent3);
       letter-spacing: 0.5px;
     }
-
+ 
     /* Libraries */
     .libs {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
-
+ 
     .lib {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -236,19 +239,19 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       color: var(--text);
       transition: border-color 0.2s, color 0.2s;
     }
-
+ 
     .lib:hover {
       border-color: var(--accent3);
       color: var(--accent3);
     }
-
+ 
     /* Output files */
     .files {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
+ 
     .file {
       display: flex;
       align-items: center;
@@ -258,23 +261,23 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       border: 1px solid var(--border);
       border-radius: 4px;
     }
-
+ 
     .file-icon {
       font-size: 1.2rem;
     }
-
+ 
     .file-name {
       font-family: 'DM Mono', monospace;
       font-size: 13px;
       color: var(--accent3);
     }
-
+ 
     .file-desc {
       font-size: 0.82rem;
       color: var(--muted);
       margin-left: auto;
     }
-
+ 
     /* Dataset link */
     .dataset-link {
       display: inline-flex;
@@ -291,11 +294,11 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       letter-spacing: 1px;
       transition: background 0.2s;
     }
-
+ 
     .dataset-link:hover {
       background: rgba(232,200,122,0.08);
     }
-
+ 
     /* Footer */
     .footer {
       margin-top: 80px;
@@ -309,18 +312,18 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
       flex-wrap: wrap;
       gap: 8px;
     }
-
+ 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
+ 
     .section:nth-child(2) { animation-delay: 0.1s; }
     .section:nth-child(3) { animation-delay: 0.2s; }
     .section:nth-child(4) { animation-delay: 0.3s; }
     .section:nth-child(5) { animation-delay: 0.4s; }
     .section:nth-child(6) { animation-delay: 0.5s; }
-
+ 
     @media (max-width: 600px) {
       .models { grid-template-columns: 1fr; }
       .file-desc { display: none; }
@@ -329,7 +332,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
 </head>
 <body>
   <div class="container">
-
+ 
     <!-- Header -->
     <div class="header">
       <div class="tag">Machine Learning · Regression</div>
@@ -342,7 +345,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
         <span class="badge gold">Regression</span>
       </div>
     </div>
-
+ 
     <!-- Steps -->
     <div class="section">
       <div class="section-label">Pipeline</div>
@@ -373,7 +376,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
         </div>
       </div>
     </div>
-
+ 
     <!-- Models -->
     <div class="section">
       <div class="section-label">Models</div>
@@ -392,7 +395,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
         </div>
       </div>
     </div>
-
+ 
     <!-- Libraries -->
     <div class="section">
       <div class="section-label">Libraries</div>
@@ -405,7 +408,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
         <div class="lib">matplotlib</div>
       </div>
     </div>
-
+ 
     <!-- Output Files -->
     <div class="section">
       <div class="section-label">Output Files</div>
@@ -422,7 +425,7 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
         </div>
       </div>
     </div>
-
+ 
     <!-- Dataset -->
     <div class="section">
       <div class="section-label">Dataset</div>
@@ -430,13 +433,13 @@ This project predicts house sale prices using the Kaggle House Prices dataset. T
         ↗ Kaggle — House Prices: Advanced Regression Techniques
       </a>
     </div>
-
+ 
     <!-- Footer -->
     <div class="footer">
       <span>house-prices-prediction</span>
       <span>lujai · 2025</span>
     </div>
-
+ 
   </div>
 </body>
 </html>
