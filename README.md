@@ -1,56 +1,60 @@
 # house-price-prediction
 This project predicts house sale prices using the Kaggle House Prices dataset. The goal is to build machine learning models that accurately estimate the price of a house.
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/render?type=waving&color=009688&height=200&section=header&text=House%20Price%20Prediction%20🏠&fontSize=50" width="100%" />
+# 🏠 House Prices Prediction
 
-  <p>
-    <img src="https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python" />
-    <img src="https://img.shields.io/badge/Scikit--Learn-Latest-orange?style=flat-square&logo=scikitlearn" />
-    <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-red?style=flat-square&logo=pandas" />
-    <img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square" />
-  </p>
+> Predict sales prices and practice feature engineering, RFs, and gradient boosting.
 
-  <h3>Predicting real estate prices using Advanced Regression and Feature Engineering</h3>
-</div>
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange)
+![Kaggle](https://img.shields.io/badge/Kaggle-Competition-20BEFF)
 
 ---
 
-## 📌 Project Overview
-This project focuses on predicting house prices based on a variety of features (geographical, structural, and quality-based). The workflow involves rigorous data cleaning, handling multicollinearity via **VIF**, and implementing ensemble learning models.
+## 📋 Pipeline
 
-## 🛠️ Tech Stack
-*   **Language:** Python
-*   **Libraries:** Pandas, NumPy, Scikit-Learn, Statsmodels
-*   **Models:** Random Forest Regressor, Gradient Boosting Regressor
-*   **Validation:** Root Mean Squared Error (RMSE)
-
----
-
-## 🚀 Key Features & Workflow
-
-### 1. Data Preprocessing
-*   **Feature Removal:** Dropped high-cardinality/missing-value columns like `Alley`, `PoolQC`, and `Fence`.
-*   **Handling Multicollinearity:** Used **Variance Inflation Factor (VIF)** to identify and remove features with high redundancy (VIF > 10).
-*   **Imputation:** Implemented **KNNImputer** to fill missing values based on nearest-neighbor logic rather than simple means.
-
-### 2. Modeling & Evaluation
-I compared two powerful ensemble methods to find the best fit for the dataset:
-
-| Model | RMSE |
-| :--- | :--- |
-| **Gradient Boosting** | **33,019.79** |
-| **Random Forest** | 33,464.79 |
-
-> [!TIP]
-> **Gradient Boosting** achieved the lowest error rate in this specific implementation, making it the primary model for final predictions.
+| Step | Description |
+|------|-------------|
+| 01 | Load & clean data — removed ID columns and dropped features with >15% missing values |
+| 02 | Handle missing values — used KNN Imputer to fill remaining nulls |
+| 03 | Feature encoding — applied One-Hot Encoding to all categorical columns |
+| 04 | Feature selection — removed multicollinear features using VIF > 10 |
+| 05 | Model training — trained Random Forest and Gradient Boosting regressors |
+| 06 | Submission — generated CSV predictions for Kaggle leaderboard |
 
 ---
 
-## 📂 Project Structure
-```bash
-├── train.csv                # Training dataset
-├── test.csv                 # Test dataset for predictions
-├── house_price_model.ipynb  # Main Jupyter Notebook
-├── submission_gb.csv        # Final Gradient Boosting predictions
-└── submission_rf.csv        # Final Random Forest predictions
+## 🤖 Models
+
+### 🌲 Random Forest
+- Ensemble of decision trees built independently in parallel
+- Fast and robust to overfitting
+- `n_estimators=100, random_state=42`
+
+### 📈 Gradient Boosting
+- Trees built sequentially, each correcting the previous
+- High accuracy with careful tuning
+- `n_estimators=50, learning_rate=0.1, max_depth=3`
+
+---
+
+## 📦 Libraries
+
+- `pandas` — data manipulation
+- `numpy` — numerical computing
+- `scikit-learn` — machine learning models
+- `statsmodels` — VIF calculation
+- `KNNImputer` — missing value handling
+
+---
+
+## 📄 Output Files
+
+- `submission_rf.csv` — Random Forest predictions
+- `submission_gb.csv` — Gradient Boosting predictions
+
+---
+
+## 📊 Dataset
+
+[Kaggle — House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
